@@ -1,0 +1,29 @@
+[versions]
+kotlin = "2.4.20"
+ktor = "3.6.0"
+coroutines = "1.11.0"
+serialization = "1.12.0-RC"
+datetime = "0.8.0"
+tgbotapi = "36.1.0"
+
+[libraries]
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+
+kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "datetime" }
+
+tgbotapi = { module = "dev.inmo:tgbotapi", version.ref = "tgbotapi" }
+
+[bundles]
+ktor-client = [
+    "ktor-client-core",
+    "ktor-client-cio"
+]
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
